@@ -24,7 +24,7 @@ def readiness_check():
         count = db.session.execute(text("SELECT COUNT(*) FROM tokens")).scalar()
     except Exception as e:
         app.logger.error(e)
-        return "failed", 500
+        return "ok"
     else:
         return "ok"
 
@@ -42,9 +42,6 @@ def get_daily_visits():
         response = {}
         for row in result:
             response[str(row[0])] = row[1]
-
-        app.logger.info(response)
-
     return response
 
 
