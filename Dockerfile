@@ -17,5 +17,3 @@ RUN pip install -r requirements.txt
 COPY ./analytics .
 # Run the app
 CMD python app.py
-
-# docker run --network="host" --env DB_PASSWORD="mypassword" --env DB_USERNAME="myuser" --env DB_HOST="127.0.0.1" --env DB_PORT=5433 --env DB_NAME="mydatabase" test-coworking-analytics
